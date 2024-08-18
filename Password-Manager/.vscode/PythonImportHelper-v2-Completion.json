@@ -1,0 +1,180 @@
+[
+    {
+        "label": "*",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "pyperclip",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyperclip",
+        "description": "pyperclip",
+        "detail": "pyperclip",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "GeneratePassword",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def GeneratePassword():\n    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',\n               'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']\n    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']\n    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']\n    nr_letters = random.randint(8, 10)\n    nr_symbols = random.randint(2, 4)\n    nr_numbers = random.randint(2, 4)\n    password_list = [random.choice(letters) for char in range(nr_letters)]\n    password_list += [random.choice(symbols) for char in range(nr_symbols)]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "save",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def save():\n    website_name = website_entry.get()\n    emailid_username = email_entry.get()\n    password = password_entry.get()\n    new_data = {\n        website_name: {\n            'email':  emailid_username,\n            'password': password\n        }\n    }",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "find_password",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def find_password():\n    website_name = website_entry.get()\n    try:\n        with open('data.json', 'r') as data_file:\n            existing_data = json.load(data_file)\n    except FileNotFoundError:\n        messagebox.showerror(title='Error', message='No Data File Found')\n    except json.decoder.JSONDecodeError:\n        messagebox.showwarning(\n            title='Error', message='Data File is empty')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "window = Tk()\nwindow.title('Password Generator')\nwindow.config(padx=50, pady=50)\ncanva = Canvas(width=200, height=200, highlightthickness=0)\n# logo image\nlogo_image = PhotoImage(file='logo.png')\ncanva.create_image(100, 100, image=logo_image)\ncanva.grid(column=1, row=0)\n# labels\nwebsite_txt = Label(text='Website: ')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "canva",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "canva = Canvas(width=200, height=200, highlightthickness=0)\n# logo image\nlogo_image = PhotoImage(file='logo.png')\ncanva.create_image(100, 100, image=logo_image)\ncanva.grid(column=1, row=0)\n# labels\nwebsite_txt = Label(text='Website: ')\nwebsite_txt.grid(column=0, row=1)\nemail_txt = Label(text=r'Email/Username: ')\nemail_txt.grid(column=0, row=2)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "logo_image",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "logo_image = PhotoImage(file='logo.png')\ncanva.create_image(100, 100, image=logo_image)\ncanva.grid(column=1, row=0)\n# labels\nwebsite_txt = Label(text='Website: ')\nwebsite_txt.grid(column=0, row=1)\nemail_txt = Label(text=r'Email/Username: ')\nemail_txt.grid(column=0, row=2)\npassword_txt = Label(text='Password: ')\npassword_txt.grid(column=0, row=3)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "website_txt",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "website_txt = Label(text='Website: ')\nwebsite_txt.grid(column=0, row=1)\nemail_txt = Label(text=r'Email/Username: ')\nemail_txt.grid(column=0, row=2)\npassword_txt = Label(text='Password: ')\npassword_txt.grid(column=0, row=3)\n# Entries\nwebsite_entry = Entry(width=35)\nwebsite_entry.grid(column=1, row=1,\n                   sticky='NSEW', padx=4, pady=4)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "email_txt",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "email_txt = Label(text=r'Email/Username: ')\nemail_txt.grid(column=0, row=2)\npassword_txt = Label(text='Password: ')\npassword_txt.grid(column=0, row=3)\n# Entries\nwebsite_entry = Entry(width=35)\nwebsite_entry.grid(column=1, row=1,\n                   sticky='NSEW', padx=4, pady=4)\nwebsite_entry.focus()\n# for understnading the use of sticky in grid():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "password_txt",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "password_txt = Label(text='Password: ')\npassword_txt.grid(column=0, row=3)\n# Entries\nwebsite_entry = Entry(width=35)\nwebsite_entry.grid(column=1, row=1,\n                   sticky='NSEW', padx=4, pady=4)\nwebsite_entry.focus()\n# for understnading the use of sticky in grid():\n# https://riptutorial.com/tkinter/example/29713/grid--\nemail_entry = Entry(width=35)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "website_entry",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "website_entry = Entry(width=35)\nwebsite_entry.grid(column=1, row=1,\n                   sticky='NSEW', padx=4, pady=4)\nwebsite_entry.focus()\n# for understnading the use of sticky in grid():\n# https://riptutorial.com/tkinter/example/29713/grid--\nemail_entry = Entry(width=35)\nemail_entry.grid(column=1, row=2, columnspan=2, sticky='NSEW', padx=4, pady=4)\n# default email(eg your most commonly used email)\nemail_entry.insert(0, 'name@gmail.com')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "email_entry",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "email_entry = Entry(width=35)\nemail_entry.grid(column=1, row=2, columnspan=2, sticky='NSEW', padx=4, pady=4)\n# default email(eg your most commonly used email)\nemail_entry.insert(0, 'name@gmail.com')\npassword_entry = Entry(width=21)\npassword_entry.grid(column=1, row=3, sticky='NSEW', padx=4, pady=4)\n# Buttons\ngeneratepassword = Button(text='Generate Password',\n                          width=15, command=GeneratePassword)\ngeneratepassword.grid(column=2, row=3, sticky='EW', padx=4, pady=4)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "password_entry",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "password_entry = Entry(width=21)\npassword_entry.grid(column=1, row=3, sticky='NSEW', padx=4, pady=4)\n# Buttons\ngeneratepassword = Button(text='Generate Password',\n                          width=15, command=GeneratePassword)\ngeneratepassword.grid(column=2, row=3, sticky='EW', padx=4, pady=4)\nadd = Button(text='Add', width=36, command=save)\nadd.grid(column=1, row=4, columnspan=2, sticky='EW', padx=4, pady=4)\nsearch_button = Button(text='Search', width=15, command=find_password)\nsearch_button.grid(column=2, row=1, sticky='EW', padx=4, pady=4)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "generatepassword",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "generatepassword = Button(text='Generate Password',\n                          width=15, command=GeneratePassword)\ngeneratepassword.grid(column=2, row=3, sticky='EW', padx=4, pady=4)\nadd = Button(text='Add', width=36, command=save)\nadd.grid(column=1, row=4, columnspan=2, sticky='EW', padx=4, pady=4)\nsearch_button = Button(text='Search', width=15, command=find_password)\nsearch_button.grid(column=2, row=1, sticky='EW', padx=4, pady=4)\nwindow.mainloop()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "add",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "add = Button(text='Add', width=36, command=save)\nadd.grid(column=1, row=4, columnspan=2, sticky='EW', padx=4, pady=4)\nsearch_button = Button(text='Search', width=15, command=find_password)\nsearch_button.grid(column=2, row=1, sticky='EW', padx=4, pady=4)\nwindow.mainloop()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "search_button",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "search_button = Button(text='Search', width=15, command=find_password)\nsearch_button.grid(column=2, row=1, sticky='EW', padx=4, pady=4)\nwindow.mainloop()",
+        "detail": "main",
+        "documentation": {}
+    }
+]

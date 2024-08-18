@@ -1,0 +1,211 @@
+[
+    {
+        "label": "Turtle",
+        "importPath": "turtle",
+        "description": "turtle",
+        "isExtraImport": true,
+        "detail": "turtle",
+        "documentation": {}
+    },
+    {
+        "label": "Screen",
+        "importPath": "turtle",
+        "description": "turtle",
+        "isExtraImport": true,
+        "detail": "turtle",
+        "documentation": {}
+    },
+    {
+        "label": "Turtle",
+        "importPath": "turtle",
+        "description": "turtle",
+        "isExtraImport": true,
+        "detail": "turtle",
+        "documentation": {}
+    },
+    {
+        "label": "Turtle",
+        "importPath": "turtle",
+        "description": "turtle",
+        "isExtraImport": true,
+        "detail": "turtle",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Snake",
+        "importPath": "snake",
+        "description": "snake",
+        "isExtraImport": true,
+        "detail": "snake",
+        "documentation": {}
+    },
+    {
+        "label": "Food",
+        "importPath": "food",
+        "description": "food",
+        "isExtraImport": true,
+        "detail": "food",
+        "documentation": {}
+    },
+    {
+        "label": "ScoreBoard",
+        "importPath": "scoreboard",
+        "description": "scoreboard",
+        "isExtraImport": true,
+        "detail": "scoreboard",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "Food",
+        "kind": 6,
+        "importPath": "food",
+        "description": "food",
+        "peekOfCode": "class Food(Turtle):\n    def __init__(self):\n        super().__init__()\n        self.shape('turtle')\n        self.penup()\n        self.shapesize(stretch_len=0.5, stretch_wid=0.5)\n        self.color('blue')\n        self.speed('fastest')\n        self.refresh()\n    def refresh(self):",
+        "detail": "food",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "screen = Screen()\nscreen.bgcolor('black')\nscreen.setup(width=600, height=600)\nscreen.title(\"My Snake Game\")\nscreen.tracer(0)\nsnake = Snake()\nfood = Food()\nscoreboard = ScoreBoard()\nscreen.listen()\nscreen.onkeypress(snake.up, 'Up')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "snake",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "snake = Snake()\nfood = Food()\nscoreboard = ScoreBoard()\nscreen.listen()\nscreen.onkeypress(snake.up, 'Up')\nscreen.onkeypress(snake.down, 'Down')\nscreen.onkeypress(snake.left, 'Left')\nscreen.onkeypress(snake.right, 'Right')\ngame_is_on = True\nwhile game_is_on:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "food",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "food = Food()\nscoreboard = ScoreBoard()\nscreen.listen()\nscreen.onkeypress(snake.up, 'Up')\nscreen.onkeypress(snake.down, 'Down')\nscreen.onkeypress(snake.left, 'Left')\nscreen.onkeypress(snake.right, 'Right')\ngame_is_on = True\nwhile game_is_on:\n    screen.update()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "scoreboard",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "scoreboard = ScoreBoard()\nscreen.listen()\nscreen.onkeypress(snake.up, 'Up')\nscreen.onkeypress(snake.down, 'Down')\nscreen.onkeypress(snake.left, 'Left')\nscreen.onkeypress(snake.right, 'Right')\ngame_is_on = True\nwhile game_is_on:\n    screen.update()\n    time.sleep(0.1)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "game_is_on",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "game_is_on = True\nwhile game_is_on:\n    screen.update()\n    time.sleep(0.1)\n    snake.move()\n    # Detect Collision with food.\n    if snake.head.distance(food) < 15:\n        food.refresh()\n        snake.extend_segment()\n        scoreboard.increase_score()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "ScoreBoard",
+        "kind": 6,
+        "importPath": "scoreboard",
+        "description": "scoreboard",
+        "peekOfCode": "class ScoreBoard(Turtle):\n    def __init__(self):\n        super().__init__()\n        self.score = 0\n        with open('highscore.txt') as file:\n            self.highscore = int(file.read())\n        self.color('white')\n        self.penup()\n        self.hideturtle()\n        self.goto(0, 270)",
+        "detail": "scoreboard",
+        "documentation": {}
+    },
+    {
+        "label": "ALIGHNMENT",
+        "kind": 5,
+        "importPath": "scoreboard",
+        "description": "scoreboard",
+        "peekOfCode": "ALIGHNMENT = 'center'\nFONT = ('Courier', 18, 'normal')\nclass ScoreBoard(Turtle):\n    def __init__(self):\n        super().__init__()\n        self.score = 0\n        with open('highscore.txt') as file:\n            self.highscore = int(file.read())\n        self.color('white')\n        self.penup()",
+        "detail": "scoreboard",
+        "documentation": {}
+    },
+    {
+        "label": "FONT",
+        "kind": 5,
+        "importPath": "scoreboard",
+        "description": "scoreboard",
+        "peekOfCode": "FONT = ('Courier', 18, 'normal')\nclass ScoreBoard(Turtle):\n    def __init__(self):\n        super().__init__()\n        self.score = 0\n        with open('highscore.txt') as file:\n            self.highscore = int(file.read())\n        self.color('white')\n        self.penup()\n        self.hideturtle()",
+        "detail": "scoreboard",
+        "documentation": {}
+    },
+    {
+        "label": "Snake",
+        "kind": 6,
+        "importPath": "snake",
+        "description": "snake",
+        "peekOfCode": "class Snake:\n    def __init__(self):\n        self.segments = []\n        self.create_snake()\n        self.head = self.segments[0]\n    def create_snake(self):\n        for position in STARTING_POSITIONS:\n            new_segment = Turtle('square')\n            new_segment.color('white')\n            new_segment.penup()",
+        "detail": "snake",
+        "documentation": {}
+    },
+    {
+        "label": "STARTING_POSITIONS",
+        "kind": 5,
+        "importPath": "snake",
+        "description": "snake",
+        "peekOfCode": "STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]\nUP = 90\nDOWN = 270\nLEFT = 180\nRIGHT = 0\nclass Snake:\n    def __init__(self):\n        self.segments = []\n        self.create_snake()\n        self.head = self.segments[0]",
+        "detail": "snake",
+        "documentation": {}
+    },
+    {
+        "label": "UP",
+        "kind": 5,
+        "importPath": "snake",
+        "description": "snake",
+        "peekOfCode": "UP = 90\nDOWN = 270\nLEFT = 180\nRIGHT = 0\nclass Snake:\n    def __init__(self):\n        self.segments = []\n        self.create_snake()\n        self.head = self.segments[0]\n    def create_snake(self):",
+        "detail": "snake",
+        "documentation": {}
+    },
+    {
+        "label": "DOWN",
+        "kind": 5,
+        "importPath": "snake",
+        "description": "snake",
+        "peekOfCode": "DOWN = 270\nLEFT = 180\nRIGHT = 0\nclass Snake:\n    def __init__(self):\n        self.segments = []\n        self.create_snake()\n        self.head = self.segments[0]\n    def create_snake(self):\n        for position in STARTING_POSITIONS:",
+        "detail": "snake",
+        "documentation": {}
+    },
+    {
+        "label": "LEFT",
+        "kind": 5,
+        "importPath": "snake",
+        "description": "snake",
+        "peekOfCode": "LEFT = 180\nRIGHT = 0\nclass Snake:\n    def __init__(self):\n        self.segments = []\n        self.create_snake()\n        self.head = self.segments[0]\n    def create_snake(self):\n        for position in STARTING_POSITIONS:\n            new_segment = Turtle('square')",
+        "detail": "snake",
+        "documentation": {}
+    },
+    {
+        "label": "RIGHT",
+        "kind": 5,
+        "importPath": "snake",
+        "description": "snake",
+        "peekOfCode": "RIGHT = 0\nclass Snake:\n    def __init__(self):\n        self.segments = []\n        self.create_snake()\n        self.head = self.segments[0]\n    def create_snake(self):\n        for position in STARTING_POSITIONS:\n            new_segment = Turtle('square')\n            new_segment.color('white')",
+        "detail": "snake",
+        "documentation": {}
+    }
+]

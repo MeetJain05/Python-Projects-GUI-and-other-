@@ -1,0 +1,176 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "importPath": "question_model",
+        "description": "question_model",
+        "isExtraImport": true,
+        "detail": "question_model",
+        "documentation": {}
+    },
+    {
+        "label": "question_data",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "QuizBrain",
+        "importPath": "quiz_brain",
+        "description": "quiz_brain",
+        "isExtraImport": true,
+        "detail": "quiz_brain",
+        "documentation": {}
+    },
+    {
+        "label": "QuizBrain",
+        "importPath": "quiz_brain",
+        "description": "quiz_brain",
+        "isExtraImport": true,
+        "detail": "quiz_brain",
+        "documentation": {}
+    },
+    {
+        "label": "QuizInterface",
+        "importPath": "ui",
+        "description": "ui",
+        "isExtraImport": true,
+        "detail": "ui",
+        "documentation": {}
+    },
+    {
+        "label": "html",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "html",
+        "description": "html",
+        "detail": "html",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "parameters",
+        "kind": 5,
+        "importPath": "data",
+        "description": "data",
+        "peekOfCode": "parameters = {\n    \"amount\": 10,\n    \"type\": 'boolean'\n}\nresponse = requests.get(url=\"https://opentdb.com/api.php\",params=parameters)\nresponse.raise_for_status()\ndata = response.json()\nquestion_data = data[\"results\"]",
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "data",
+        "description": "data",
+        "peekOfCode": "response = requests.get(url=\"https://opentdb.com/api.php\",params=parameters)\nresponse.raise_for_status()\ndata = response.json()\nquestion_data = data[\"results\"]",
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "data",
+        "description": "data",
+        "peekOfCode": "data = response.json()\nquestion_data = data[\"results\"]",
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "question_data",
+        "kind": 5,
+        "importPath": "data",
+        "description": "data",
+        "peekOfCode": "question_data = data[\"results\"]",
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "question_bank",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "question_bank = []\nfor question in question_data:\n    question_text = question[\"question\"]\n    question_answer = question[\"correct_answer\"]\n    new_question = Question(question_text, question_answer)\n    question_bank.append(new_question)\nquiz = QuizBrain(question_bank)\nquiz_ui = QuizInterface(quiz)\n# while quiz.still_has_questions():\n#     quiz.next_question()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "quiz",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "quiz = QuizBrain(question_bank)\nquiz_ui = QuizInterface(quiz)\n# while quiz.still_has_questions():\n#     quiz.next_question()\nprint(\"You've completed the quiz\")\nprint(f\"Your final score was: {quiz.score}/{quiz.question_number}\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "quiz_ui",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "quiz_ui = QuizInterface(quiz)\n# while quiz.still_has_questions():\n#     quiz.next_question()\nprint(\"You've completed the quiz\")\nprint(f\"Your final score was: {quiz.score}/{quiz.question_number}\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "kind": 6,
+        "importPath": "question_model",
+        "description": "question_model",
+        "peekOfCode": "class Question:\n    def __init__(self, q_text, q_answer):\n        self.text = q_text\n        self.answer = q_answer",
+        "detail": "question_model",
+        "documentation": {}
+    },
+    {
+        "label": "QuizBrain",
+        "kind": 6,
+        "importPath": "quiz_brain",
+        "description": "quiz_brain",
+        "peekOfCode": "class QuizBrain:\n    def __init__(self, q_list):\n        self.question_number = 0\n        self.score = 0\n        self.question_list = q_list\n        self.current_question = None\n    def still_has_questions(self):\n        return self.question_number < len(self.question_list)\n    def next_question(self):\n        self.current_question = self.question_list[self.question_number]",
+        "detail": "quiz_brain",
+        "documentation": {}
+    },
+    {
+        "label": "QuizInterface",
+        "kind": 6,
+        "importPath": "ui",
+        "description": "ui",
+        "peekOfCode": "class QuizInterface:\n    def __init__(self,quiz_brain: QuizBrain):\n        self.window = Tk()\n        self.window.title('Quizzler')\n        self.window.config(bg=THEME_COLOR, padx=20, pady=20)\n        self.quiz = quiz_brain\n        self.canva = Canvas(bg='white', height=250, width=300)\n        self.question_text = self.canva.create_text(150, 125, font=FONT, fill=THEME_COLOR,width=280)\n        self.canva.grid(column=0, columnspan=2, row=1, padx=20, pady=20)\n        correct_image = PhotoImage(file=r'images\\true.png')",
+        "detail": "ui",
+        "documentation": {}
+    },
+    {
+        "label": "THEME_COLOR",
+        "kind": 5,
+        "importPath": "ui",
+        "description": "ui",
+        "peekOfCode": "THEME_COLOR = \"#375362\"\nFONT = (\"Arial\", 14, \"italic\")\nclass QuizInterface:\n    def __init__(self,quiz_brain: QuizBrain):\n        self.window = Tk()\n        self.window.title('Quizzler')\n        self.window.config(bg=THEME_COLOR, padx=20, pady=20)\n        self.quiz = quiz_brain\n        self.canva = Canvas(bg='white', height=250, width=300)\n        self.question_text = self.canva.create_text(150, 125, font=FONT, fill=THEME_COLOR,width=280)",
+        "detail": "ui",
+        "documentation": {}
+    },
+    {
+        "label": "FONT",
+        "kind": 5,
+        "importPath": "ui",
+        "description": "ui",
+        "peekOfCode": "FONT = (\"Arial\", 14, \"italic\")\nclass QuizInterface:\n    def __init__(self,quiz_brain: QuizBrain):\n        self.window = Tk()\n        self.window.title('Quizzler')\n        self.window.config(bg=THEME_COLOR, padx=20, pady=20)\n        self.quiz = quiz_brain\n        self.canva = Canvas(bg='white', height=250, width=300)\n        self.question_text = self.canva.create_text(150, 125, font=FONT, fill=THEME_COLOR,width=280)\n        self.canva.grid(column=0, columnspan=2, row=1, padx=20, pady=20)",
+        "detail": "ui",
+        "documentation": {}
+    }
+]

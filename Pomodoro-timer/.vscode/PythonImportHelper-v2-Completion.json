@@ -1,0 +1,217 @@
+[
+    {
+        "label": "*",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "Reset",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def Reset():\n    global timer,reps\n    global check_marks\n    window.after_cancel(timer)\n    canva.itemconfig(timer_text,text =\"00:00\")\n    check_marks.config(text='')\n    title_text.config(text='Timer',fg=GREEN)\n    reps = 0\n# ---------------------------- TIMER MECHANISM ------------------------------- #\ndef start_timer():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "start_timer",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def start_timer():\n    global reps\n    global check_marks\n    #Go to the bottom to see this code works\n    window.attributes('-topmost', 1)\n    window.attributes('-topmost', 0)\n    if canva.itemcget(timer_text, 'text') == '00:00':\n        reps += 1\n        if reps % 8 == 0 :\n            Countdown(LONG_BREAK_MIN*60)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Countdown",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def Countdown(count):\n    global timer\n    count_min = count // 60\n    count_sec = count % 60\n    if count_sec < 10:\n        count_sec =f'0{count_sec}'\n    if count_min == 0:\n        count_min = f'0{count_min}'\n    canva.itemconfig(timer_text,text =f\"{count_min}:{count_sec}\")\n    if count > 0:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "PINK",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "PINK = \"#e2979c\"\nRED = \"#e7305b\"\nGREEN = \"#9bdeac\"\nYELLOW = \"#f7f5dd\"\nFONT_NAME = \"Courier\"\nWORK_MIN = 25\nSHORT_BREAK_MIN = 5\nLONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "RED = \"#e7305b\"\nGREEN = \"#9bdeac\"\nYELLOW = \"#f7f5dd\"\nFONT_NAME = \"Courier\"\nWORK_MIN = 25\nSHORT_BREAK_MIN = 5\nLONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0\ntimer = None",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "GREEN",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "GREEN = \"#9bdeac\"\nYELLOW = \"#f7f5dd\"\nFONT_NAME = \"Courier\"\nWORK_MIN = 25\nSHORT_BREAK_MIN = 5\nLONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "YELLOW",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "YELLOW = \"#f7f5dd\"\nFONT_NAME = \"Courier\"\nWORK_MIN = 25\nSHORT_BREAK_MIN = 5\nLONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "FONT_NAME",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "FONT_NAME = \"Courier\"\nWORK_MIN = 25\nSHORT_BREAK_MIN = 5\nLONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():\n    global timer,reps",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "WORK_MIN",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "WORK_MIN = 25\nSHORT_BREAK_MIN = 5\nLONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():\n    global timer,reps\n    global check_marks",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "SHORT_BREAK_MIN",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "SHORT_BREAK_MIN = 5\nLONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():\n    global timer,reps\n    global check_marks\n    window.after_cancel(timer)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "LONG_BREAK_MIN",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "LONG_BREAK_MIN = 20\nFont = ('Roboto',8)\nreps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():\n    global timer,reps\n    global check_marks\n    window.after_cancel(timer)\n    canva.itemconfig(timer_text,text =\"00:00\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Font",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "Font = ('Roboto',8)\nreps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():\n    global timer,reps\n    global check_marks\n    window.after_cancel(timer)\n    canva.itemconfig(timer_text,text =\"00:00\")\n    check_marks.config(text='')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "reps",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "reps = 0\ntimer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():\n    global timer,reps\n    global check_marks\n    window.after_cancel(timer)\n    canva.itemconfig(timer_text,text =\"00:00\")\n    check_marks.config(text='')\n    title_text.config(text='Timer',fg=GREEN)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "timer",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "timer = None\n# ---------------------------- TIMER RESET ------------------------------- #\ndef Reset():\n    global timer,reps\n    global check_marks\n    window.after_cancel(timer)\n    canva.itemconfig(timer_text,text =\"00:00\")\n    check_marks.config(text='')\n    title_text.config(text='Timer',fg=GREEN)\n    reps = 0",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "window = Tk()\nwindow.title('Pomodoro-Timer')\nwindow.config(padx=100, pady=50, bg=YELLOW)\ncanva = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)\ntomoto_image = PhotoImage(file='tomato.png')\ncanva.create_image(100, 112, image=tomoto_image)\ntimer_text = canva.create_text(100, 132, text='00:00', fill='white', font=(FONT_NAME, 35, 'bold'))\ncanva.grid(column=2,row=2)\n#title text\ntitle_text = Label(text='Timer',font=(FONT_NAME,50),fg=GREEN,bg=YELLOW)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "canva",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "canva = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)\ntomoto_image = PhotoImage(file='tomato.png')\ncanva.create_image(100, 112, image=tomoto_image)\ntimer_text = canva.create_text(100, 132, text='00:00', fill='white', font=(FONT_NAME, 35, 'bold'))\ncanva.grid(column=2,row=2)\n#title text\ntitle_text = Label(text='Timer',font=(FONT_NAME,50),fg=GREEN,bg=YELLOW)\ntitle_text.grid(column=2,row=1)\n#start button\nstart_button = Button(text='Start',highlightthickness=0,command=start_timer)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tomoto_image",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "tomoto_image = PhotoImage(file='tomato.png')\ncanva.create_image(100, 112, image=tomoto_image)\ntimer_text = canva.create_text(100, 132, text='00:00', fill='white', font=(FONT_NAME, 35, 'bold'))\ncanva.grid(column=2,row=2)\n#title text\ntitle_text = Label(text='Timer',font=(FONT_NAME,50),fg=GREEN,bg=YELLOW)\ntitle_text.grid(column=2,row=1)\n#start button\nstart_button = Button(text='Start',highlightthickness=0,command=start_timer)\nstart_button.grid(column=1,row=3)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "timer_text",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "timer_text = canva.create_text(100, 132, text='00:00', fill='white', font=(FONT_NAME, 35, 'bold'))\ncanva.grid(column=2,row=2)\n#title text\ntitle_text = Label(text='Timer',font=(FONT_NAME,50),fg=GREEN,bg=YELLOW)\ntitle_text.grid(column=2,row=1)\n#start button\nstart_button = Button(text='Start',highlightthickness=0,command=start_timer)\nstart_button.grid(column=1,row=3)\n#reset button\nreset_button = Button(text='Reset',highlightthickness=0,command=Reset)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "title_text",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "title_text = Label(text='Timer',font=(FONT_NAME,50),fg=GREEN,bg=YELLOW)\ntitle_text.grid(column=2,row=1)\n#start button\nstart_button = Button(text='Start',highlightthickness=0,command=start_timer)\nstart_button.grid(column=1,row=3)\n#reset button\nreset_button = Button(text='Reset',highlightthickness=0,command=Reset)\nreset_button.grid(column=3,row=3)\n#checkmarks\ncheck_marks = Label(fg=GREEN,bg=YELLOW,font=('Roboto',12,'bold'))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "start_button",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "start_button = Button(text='Start',highlightthickness=0,command=start_timer)\nstart_button.grid(column=1,row=3)\n#reset button\nreset_button = Button(text='Reset',highlightthickness=0,command=Reset)\nreset_button.grid(column=3,row=3)\n#checkmarks\ncheck_marks = Label(fg=GREEN,bg=YELLOW,font=('Roboto',12,'bold'))\ncheck_marks.grid(column=2,row=4)\nwindow.mainloop()\n#------------------------From Stackoverflow------------------------#",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "reset_button",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "reset_button = Button(text='Reset',highlightthickness=0,command=Reset)\nreset_button.grid(column=3,row=3)\n#checkmarks\ncheck_marks = Label(fg=GREEN,bg=YELLOW,font=('Roboto',12,'bold'))\ncheck_marks.grid(column=2,row=4)\nwindow.mainloop()\n#------------------------From Stackoverflow------------------------#\n# Assuming you mean your application windows when you say \"my other windows\", you can use the lift() method on a Toplevel or Tk:\n# root.lift()\n# If you want the window to stay above all other windows, use:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "check_marks",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "check_marks = Label(fg=GREEN,bg=YELLOW,font=('Roboto',12,'bold'))\ncheck_marks.grid(column=2,row=4)\nwindow.mainloop()\n#------------------------From Stackoverflow------------------------#\n# Assuming you mean your application windows when you say \"my other windows\", you can use the lift() method on a Toplevel or Tk:\n# root.lift()\n# If you want the window to stay above all other windows, use:\n# root.attributes(\"-topmost\", True)\n# Where root is your Toplevel or Tk. Don't forget the - infront of \"topmost\"!\n# To make it temporary, disable topmost right after:",
+        "detail": "main",
+        "documentation": {}
+    }
+]
